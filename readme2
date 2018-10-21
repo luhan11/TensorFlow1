@@ -1,0 +1,23 @@
+Title:Keras卷积神经网络识别手写数字
+目的：通过Kears建立卷积神经网络（ＣＮＮ），然后通过训练模型，评估模型准确率接近0.99，最后使用训练完成的模型来识别ＭＮＩＳＴ手写数字．
+主要使用的库和ＡＰＩ：
+from keras.datasets import mnist      
+from keras.utils import np_utils
+import numpy as np
+from keras.models import Sequential   
+from keras.layers import Dense,Dropout,Flatten,Conv2D,MaxPooling2D
+import matplotlib.pyplot as plt
+import pandas as pd 
+其中所用函数：
+
+x_Train.reshape(x_Train.shape[0],28,28,1).astype('float32')：将数字图像特征值转为四维矩阵
+np_utils.to_categorical(y_Train)：将数字图像真实值OneHot Ecoding转换
+show_train_history(train_history,train,test)：用以显示训练过程
+model.evaluate (x_Test4D_normalize,y_TestOnehot)：估模型准确率
+plot_images_labels_prediction(images,labels,prediction,idx,num=10)：用以显示预测结果
+
+def plot_images_labels_prediction（）：
+定义此函数可以方便我们查看数字图形，真实的数字与预测结果．
+
+def show_train_history（）：
+定义此函数可以方便我们读取前面训练步骤中每个训练周期的准确率和误差．

@@ -1,0 +1,26 @@
+Title:Keras多层感知器识别手写数字
+目的：通过Kears建立多层感知器模型，然后训练模型，评估模型的准确率，最后使用训练完成的模型来识别ＭＮＩＳＴ手写数字．
+主要使用的库和ＡＰＩ：
+from keras.utils import np_utils       
+import numpy as np
+from keras.datasets import mnist 
+from keras.models import Sequential 
+from keras.layers import Dense
+import matplotlib.pyplot as plt  
+import pandas as pd  
+from keras.layers import Dropout
+其中所用函数：
+show_train_history(train_history,train,validation)　：用以显示训练过程
+
+x_train_image.reshape(60000,784).astype('float32')　：将数字图像特征值reshape转换
+
+np_utils.to_categorical(y_train_label　)  　　　　　　：将数字真实值OneHot Encoding转化
+
+plot_images_labels_prediction(images,labels,prediction,idx,num=10)：用以显示预测结果
+
+
+def plot_images_labels_prediction（）：
+定义此函数可以方便我们查看数字图形，真实的数字与预测结果．
+
+def show_train_history（）：
+定义此函数可以方便我们读取前面训练步骤中每个训练周期的准确率和误差．
